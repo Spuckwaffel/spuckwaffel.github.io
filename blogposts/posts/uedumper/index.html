@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>UEDumper - The all in one Unreal Engine Dumper and editor :: Spuckwaffels Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introducing UEDumper - Your comprehensive tool for Unreal Engine exploration and manipulation. Unlock the potential of Unreal Engine versions 4.19 to 5.2.0 with fast SDK generation and visualization and real-time game memory modification. Elevate your UE modding development experience with UEDumpers powerful features." />
+<meta name="keywords" content="UEDumper, " />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://example.org/posts/uedumper/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://example.org/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="http://example.org/img/theme-colors/blue.png">
+  <link rel="apple-touch-icon" href="http://example.org/img/theme-colors/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="UEDumper - The all in one Unreal Engine Dumper and editor">
+<meta property="og:description" content="Introducing UEDumper - Your comprehensive tool for Unreal Engine exploration and manipulation. Unlock the potential of Unreal Engine versions 4.19 to 5.2.0 with fast SDK generation and visualization and real-time game memory modification. Elevate your UE modding development experience with UEDumpers powerful features." />
+<meta property="og:url" content="http://example.org/posts/uedumper/" />
+<meta property="og:site_name" content="Spuckwaffels Blog" />
+
+  
+  
+  <meta property="og:image" content="http://example.org/">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2023-08-29 17:10:28 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Spuckwaffels Blogposts
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://spuckwaffel.com/">Homepage</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="https://spuckwaffel.com/" >Homepage</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://example.org/posts/uedumper/">UEDumper - The all in one Unreal Engine Dumper and editor</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2023-08-29</time><span class="post-author">Spuckwaffel</span><span class="post-reading-time">8 minutes read (1507 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="http://example.org/tags/unreal-engine/">Unreal Engine</a>&nbsp;
+      
+      #<a href="http://example.org/tags/sdk/">SDK</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="disclaimer">Disclaimer<a href="#disclaimer" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>UEDumper is intended solely for educational and experiential purposes. It is not designed or intended to target Unreal Engine, its developers, or any associated entities. The project&rsquo;s purpose is to provide a platform for exploring the core functionality of Unreal Engine. Any use of UEDumper outside the scope of educational exploration is strongly discouraged. The developers of UEDumper do not endorse or support any misuse of this tool for unauthorized activities. Always adhere to ethical and legal standards when using UEDumper or any similar tools.</p>
+<h2 id="introduction">Introduction<a href="#introduction" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>This article explores the functionalities of UEDumper without delving into the technical details of its inner mechanisms. For those seeking to delve deeper, the source code and assistance can be accessed on <a href="https://github.com/Spuckwaffel/UEDumper">GitHub</a>.</p>
+</blockquote>
+<p>Within the realm of Unreal Engine games, the allure of having an SDK generator for your target game lies in the ability to keep your program in sync with the latest updates to structs, classes, and offsets. Yet, this convenience often comes at a cost: the proliferation of hundreds of files, leaving you puzzled about which to include and which to omit from your project.</p>
+<p>Moreover, a recurrent challenge emerges when dealing with pointers within classes — instead of pointing to the actual class, they frequently reference default classes. A prime example surfaces in Epic Games&rsquo; Fortnite, where the PawnPrivate points to APawn rather than the more relevant AFortPlayerPawn.</p>
+<p>Enter UEDumper&rsquo;s groundbreaking solution — a fusion of an SDK editor and Live editor. With this dynamic duo at your disposal, these quandaries find resolution. Seamlessly navigate the intricate pathways of Unreal Engine games, demystify pointers, and identify discrepancies between expected and actual class references. UEDumper shines as a beacon of clarity in the often intricate landscape of mod development.</p>
+<h2 id="motivation">Motivation<a href="#motivation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>I&rsquo;ve always been intrigued by the inner workings of Unreal Engine SDK generators. The way entire classes can be constructed even in the absence of a .pdb file containing all the necessary structures and classes fascinated me. What struck me even more was the incredible convenience these tools brought to the table when dealing with newly released games – enabling quick modding within a matter of minutes.</p>
+<p>There was a persistent frustration, though. Whenever I wished to test memory modifications or simply read specific values, I found myself laboring to integrate the logic into my program and then painstakingly printing the results. This not only consumed precious time but also placed significant constraints on the depth of exploration possible.</p>
+<p>Adding to this mix was a friend&rsquo;s concept of a &ldquo;live editor&rdquo;, a concept that intrigued me greatly. Although my friend never released their version, the idea stuck with me, eventually pushing me towards creating one myself.</p>
+<p>All these factors converged into the birth of this tool. Originally, I hadn&rsquo;t even planned to release it as an open-source project. However, a desire to provide something of real value to others, something that could genuinely aid in their future development endeavors, led me to share this creation with the community.</p>
+<h2 id="getting-started">Getting Started<a href="#getting-started" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Getting started with UEDumper is a breeze, especially if you&rsquo;re familiar with the consistent structure found in Unreal Engine games. The way classes, structs, and names are generated tends to follow a similar pattern across titles. Fortunately, the open-source nature of Unreal Engine&rsquo;s code grants you access to its inner workings, enabling you to grasp its core logic.</p>
+<p>In a nutshell, UEDumper capitalizes on Unreal Engine&rsquo;s reflection system to gather essential information. This reflection system possesses the remarkable ability to let a program examine itself during runtime. This capability underpins crucial functionalities in Unreal Engine, ranging from editor detail panels to serialization, garbage collection, network replication, and Blueprint/C++ interactions. It&rsquo;s important to note that standard C++ lacks inherent reflection support, prompting Unreal Engine to develop its own mechanism for harvesting, querying, and manipulating data related to C++ classes, structs, functions, member variables, and enumerations.</p>
+<p>This robust reflection system is embedded within every Unreal Engine game. It empowers you to recreate all the classes and structs painstakingly crafted by game developers and the Unreal Engine team itself. Think of it as an innate built-in editor within Unreal Engine that we can readily leverage through UEDumper.</p>
+<p>Though there are a few essential steps required to get UEDumper up and running, they are relatively straightforward. The offsets known as <code>GNames</code> and <code>GObjects</code> stand as crucial elements to launch the dumper and obtain a robust SDK. It&rsquo;s worth noting that while this article won&rsquo;t delve into the process of acquiring these offsets, I plan to address this topic in a separate post.</p>
+<p>In addition, you might need to configure a handful of game-related settings within the specific settings file. Often, these settings are already optimized for the game&rsquo;s requirements. Once you&rsquo;ve secured the necessary offsets and integrated them correctly, along with configuring the relevant settings, you&rsquo;re all set to dive into the process of dumping and generating your very first SDK! These initial steps pave the way for a rewarding journey into exploring the Unreal Engine&rsquo;s intricacies.</p>
+<h2 id="overview-of-uedumper">Overview of UEDumper<a href="#overview-of-uedumper" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Once your game project is established and an effective SDK is created, the UEDumper tool unfolds with an array of convenient features, streamlining the exploration of your SDK. The Package window, situated on the left, meticulously arranges all game Packages in alphabetical order—excluding the BasicType class housing manually crafted structures and classes. By selecting any package, its contents—comprising classes, structs, functions, and enums — become readily accessible. Each package bears its own unique array of contents, varying in scope and scale.</p>
+<p>Classes and structs come alive with size and offset information alongside their members, rendering effortless comparisons to previous dumps. The presence of &ldquo;unknowndata&rdquo; variables, instances where variables remain undefined or undiscovered, occasionally arises due to struct variable visibility issues in the reflection system. Rectifying this is achievable—simply edit the &ldquo;unknowndata&rdquo; field and define the variable manually. All modifications can be saved, seamlessly synchronizing the live editor and SDK.</p>
+<p>Speaking of saving, the entire project can be preserved, allowing unfettered access to the SDK viewer sans the need for redumping—an invaluable asset for both streamlined browsing and collaborative sharing. Below the packages, a search bar resides, permitting direct queries for classes, structs, functions, and enums, triggering the opening of their corresponding packages.</p>
+<p>On the right side, an assortment of structs, classes, functions, and enums grace the screen. Selection of any index offers an insightful display. Within classes and structs, pinpointing variable members is a cinch, swiftly navigating to the desired location and distinctly marking it for ease.</p>
+<blockquote>
+<p>Below is an image depicting the SDK editor window, revealing a successful SDK generation alongside accessible open packages.</p>
+</blockquote>
+<p><img src="/UEDumper.png" alt="Image showing the SDK editor window"></p>
+<p>When your exploration concludes, project preservation is a snap — save your project to disk, ensuring continuous access to your SDK exploration. The journey through the Unreal Engine&rsquo;s intricacies becomes not only comprehensible but also consistently engaging with UEDumper.</p>
+<h2 id="live-editor">Live Editor<a href="#live-editor" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The live editor stands as a robust instrument, enabling real-time viewing of classes with their data, all without writing a single line of code. With the ability to effortlessly add actual Unreal Engine class addresses, exploration becomes immediately accessible. This dynamic tool seamlessly identifies the class type, streamlining your experience.</p>
+<p>Alternatively, the option to input offsets, such as <code>GWorld</code> provides a unique advantage. Whenever the current world changes, the world pointer is updated accordingly with all its data.</p>
+<p>Imagine the live editor as a counterpart to the widely recognized tool ReClass, but with an additional layer — predefined classes that eliminate guesswork. Through dedicated use of the live editor, you&rsquo;ll come across the automatic class pointer fix, a feature that addresses the challenge arising from pointers pointing to base classes instead of their actual inheriting classes. In practical terms, this means that variables like <code>APawn* PawnPrivate</code> in the SDK/Reflection system are transformed into their more descriptive counterparts like <code>AFortPlayerPawn* PawnPrivate</code>.</p>
+<p>The live editor&rsquo;s capacity to address this issue becomes especially valuable when crafting mods. It clarifies what data is truly accessible and what isn&rsquo;t — an essential aspect for mod creation. Moreover, this tool isn&rsquo;t limited to observation alone; it allows direct value manipulation for various data types. Furthermore, support for enums is built-in, complete with their designated names, and even a color picker is at your disposal for seamless modifications.</p>
+<blockquote>
+<p>You will find a video link at the bottom of the GitHub readme showcasing the live editor.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>In conclusion, UEDumper emerges as a powerful companion for all Unreal Engine enthusiasts, offering a streamlined approach to exploring the inner workings of the engine, even down to real-time manipulation. While this article has provided a glimpse into its capabilities, the true potential lies in your hands as you dive into the repository.</p>
+<p>Feel free to explore the UEDumper repository on <a href="https://github.com/Spuckwaffel/UEDumper">GitHub</a> to access its source code and tap into a wealth of resources. It&rsquo;s important to note that UEDumper is an actively maintained project, evolving with the ever-changing landscape of game development. With an engaged community around it, you&rsquo;ll find support, updates, and discussions that can enhance your journey into the heart of Unreal Engine.</p>
+
+      </div></div>
+
+  
+    
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Spuckwaffel</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
