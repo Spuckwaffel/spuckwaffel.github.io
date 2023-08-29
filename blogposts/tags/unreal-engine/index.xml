@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unreal Engine on Spuckwaffels Blog</title>
-    <link>http://example.org/tags/unreal-engine/</link>
+    <link>https://spuckwaffel.com/blogposts/tags/unreal-engine/</link>
     <description>Recent content in Unreal Engine on Spuckwaffels Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Spuckwaffel</copyright>
-    <lastBuildDate>Tue, 29 Aug 2023 17:10:28 +0200</lastBuildDate><atom:link href="http://example.org/tags/unreal-engine/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Aug 2023 17:10:28 +0200</lastBuildDate><atom:link href="https://spuckwaffel.com/blogposts/tags/unreal-engine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UEDumper - The all in one Unreal Engine Dumper and editor</title>
-      <link>http://example.org/posts/uedumper/</link>
+      <link>https://spuckwaffel.com/blogposts/posts/uedumper/</link>
       <pubDate>Tue, 29 Aug 2023 17:10:28 +0200</pubDate>
       
-      <guid>http://example.org/posts/uedumper/</guid>
+      <guid>https://spuckwaffel.com/blogposts/posts/uedumper/</guid>
       <description>Disclaimer UEDumper is intended solely for educational and experiential purposes. It is not designed or intended to target Unreal Engine, its developers, or any associated entities. The project&amp;rsquo;s purpose is to provide a platform for exploring the core functionality of Unreal Engine. Any use of UEDumper outside the scope of educational exploration is strongly discouraged. The developers of UEDumper do not endorse or support any misuse of this tool for unauthorized activities.</description>
       <content>&lt;h2 id=&#34;disclaimer&#34;&gt;Disclaimer&lt;/h2&gt;
 &lt;p&gt;UEDumper is intended solely for educational and experiential purposes. It is not designed or intended to target Unreal Engine, its developers, or any associated entities. The project&amp;rsquo;s purpose is to provide a platform for exploring the core functionality of Unreal Engine. Any use of UEDumper outside the scope of educational exploration is strongly discouraged. The developers of UEDumper do not endorse or support any misuse of this tool for unauthorized activities. Always adhere to ethical and legal standards when using UEDumper or any similar tools.&lt;/p&gt;
@@ -43,7 +43,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Below is an image depicting the SDK editor window, revealing a successful SDK generation alongside accessible open packages.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://example.org/UEDumper.png&#34; alt=&#34;Image showing the SDK editor window&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://spuckwaffel.com/blogposts/UEDumper.png&#34; alt=&#34;Image showing the SDK editor window&#34;&gt;&lt;/p&gt;
 &lt;p&gt;When your exploration concludes, project preservation is a snap — save your project to disk, ensuring continuous access to your SDK exploration. The journey through the Unreal Engine&amp;rsquo;s intricacies becomes not only comprehensible but also consistently engaging with UEDumper.&lt;/p&gt;
 &lt;h2 id=&#34;live-editor&#34;&gt;Live Editor&lt;/h2&gt;
 &lt;p&gt;The live editor stands as a robust instrument, enabling real-time viewing of classes with their data, all without writing a single line of code. With the ability to effortlessly add actual Unreal Engine class addresses, exploration becomes immediately accessible. This dynamic tool seamlessly identifies the class type, streamlining your experience.&lt;/p&gt;

@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Spuckwaffels Blog</title>
-    <link>http://example.org/tags/</link>
+    <link>https://spuckwaffel.com/blogposts/tags/</link>
     <description>Recent content in Tags on Spuckwaffels Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Spuckwaffel</copyright>
-    <lastBuildDate>Tue, 29 Aug 2023 17:10:28 +0200</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Aug 2023 17:10:28 +0200</lastBuildDate><atom:link href="https://spuckwaffel.com/blogposts/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SDK</title>
-      <link>http://example.org/tags/sdk/</link>
+      <link>https://spuckwaffel.com/blogposts/tags/sdk/</link>
       <pubDate>Tue, 29 Aug 2023 17:10:28 +0200</pubDate>
       
-      <guid>http://example.org/tags/sdk/</guid>
+      <guid>https://spuckwaffel.com/blogposts/tags/sdk/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Unreal Engine</title>
-      <link>http://example.org/tags/unreal-engine/</link>
+      <link>https://spuckwaffel.com/blogposts/tags/unreal-engine/</link>
       <pubDate>Tue, 29 Aug 2023 17:10:28 +0200</pubDate>
       
-      <guid>http://example.org/tags/unreal-engine/</guid>
+      <guid>https://spuckwaffel.com/blogposts/tags/unreal-engine/</guid>
       <description></description>
       <content></content>
     </item>
