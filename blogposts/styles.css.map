@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "C:/Users/roman/Downloads/hugo_extended_0.117.0_windows-amd64/quickstart",
+	"sourceRoot": "C:/Users/Spuck/source/repos/blogs-work/blogs-work/quickstart",
 	"sources": [
 		"css/base.scss",
 		"themes/terminal/assets/css/variables.scss",
