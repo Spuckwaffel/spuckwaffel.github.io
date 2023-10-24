@@ -139,7 +139,7 @@
   <h1 class="post-title">
     <a href="https://spuckwaffel.com/blogposts/posts/signature-scanning/">RE-Invent: Signature Scanning</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2023-09-13</time><span class="post-author">Spuckwaffel</span><span class="post-reading-time">6 minutes read (1102 words)</span></div>
+  <div class="post-meta"><time class="post-date">2023-09-13</time><span class="post-author">Spuckwaffel</span><span class="post-reading-time">6 minutes read (1227 words)</span></div>
 
   
     <span class="post-tags">
@@ -220,10 +220,15 @@ The process of obtaining the offset involves a straightforward calculation by th
 <p>If we were to write a function for this, it would take a binary pattern as input, get the address, read bytes 4 to 7, and add this to the address of the next instruction.
 A pseudocode would look like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">getOffset</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get the address of the mov instruction
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get the address of the specific instruction with additional bytes so we get only one match
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">uint64_t</span> address <span style="color:#f92672">=</span> getAddressByPattern(<span style="color:#e6db74">&#34;48 89 05 ? ? ? ? 48 8D A5 C8 00 00 00&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// The address variable now contains the memory address where the pattern has ben found.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Normally, theres nothing more we have to do if this is our target destination.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// However in our case, we also want to get the offset of the global variable players.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get the offset from the 4th - 7th byte
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> offset <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)(address <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> offset <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)(address <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 48 89 05 ? ? ? ? &lt;-- read out the wildcards
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Calculate the real offset
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// + 7 because the mov instrunction is 7 bytes long
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// =&gt; next instrunction is at address + 7
@@ -232,7 +237,8 @@ A pseudocode would look like this:</p>
 </span></span></code></pre></div><h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>With this function, you can effortlessly obtain the offset with each game update. However, bear in mind that if the function you&rsquo;ve created the signature for changes, the signature may break, necessitating its recreation.</p>
 <p>This approach is significantly more efficient than manually searching for the offset and has the added advantage of supporting multiple versions simultaneously. This is why signatures are widely used in game modification applications - they offer a simple and reliable method for finding offsets.</p>
-<p>In conclusion, while signature scanning requires some initial setup and occasional updates, its benefits in terms of efficiency, multi-version support, and reliability make it an invaluable tool in the realm of game modification. It&rsquo;s a testament to the power of automation and smart design in making complex tasks more manageable.</p>
+<p>Pattern scans are frequently used in real-world scenarios for hooking specific functions in games, not only for finding offsets. For instance, game capture programs like Medal or OBS employ these scans to capture a game&rsquo;s video and audio output. They could use pattern scans to locate the target function they need.</p>
+<p>In conclusion, while signature scanning requires some initial setup and occasional updates, its benefits in terms of efficiency, multi-version support, and reliability make it an invaluable tool in the realm of game modification, vulnerability research and much more. It&rsquo;s a testament to the power of automation and smart design in making complex tasks more manageable.</p>
 
       </div></div>
 
@@ -244,6 +250,13 @@ A pseudocode would look like this:</p>
         <hr />
     </div>
     <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://spuckwaffel.com/blogposts/posts/byte-patching/">
+                <span class="button__icon">←</span>
+                <span class="button__text">RE-Invent: Byte Patching functions for unfair advantages</span>
+            </a>
+        </span>
         
         
         <span class="button next">
